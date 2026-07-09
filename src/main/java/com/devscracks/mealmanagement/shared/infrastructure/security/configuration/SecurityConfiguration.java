@@ -1,7 +1,6 @@
 package com.devscracks.mealmanagement.shared.infrastructure.security.configuration;
 
 import com.devscracks.mealmanagement.shared.infrastructure.security.authorization.HeaderAuthenticationFilter;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -10,11 +9,6 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-
-import java.util.List;
 
 /**
  * Configures HTTP security for the Meal Management service.
@@ -22,6 +16,9 @@ import java.util.List;
  * <p>Authentication and role resolution are delegated to the upstream API Gateway, which
  * forwards the caller's identity via the {@code X-User-Id} and {@code X-User-Role} headers.
  * This service only enforces authorization on top of the identity carried by those headers.</p>
+ *
+ * <p>CORS is handled exclusively by the upstream API Gateway; this service does not add any
+ * CORS headers of its own.</p>
  */
 @Configuration
 public class SecurityConfiguration {
@@ -35,27 +32,11 @@ public class SecurityConfiguration {
 
     private static final String MEALS_BASE_PATH = "/api/v1/meals";
 
-    @Value("${cors.allowed-origins:https://mealflow-745df.web.app,http://localhost:4200,http://localhost:3000}")
-    private List<String> allowedOrigins;
-
-    @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(allowedOrigins);
-        configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
-        configuration.setAllowedHeaders(List.of("*"));
-        configuration.setAllowCredentials(true);
-
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", configuration);
-        return source;
-    }
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity, HeaderAuthenticationFilter headerAuthenticationFilter) throws Exception {
         httpSecurity
                 .csrf(AbstractHttpConfigurer::disable)
-                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+                .cors(AbstractHttpConfigurer::disable)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .httpBasic(AbstractHttpConfigurer::disable)
                 .formLogin(AbstractHttpConfigurer::disable)
