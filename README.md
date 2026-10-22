@@ -12,16 +12,16 @@ separates bounded contexts and segregates data mutation (Commands) from data ret
 ## Tech Stack
 
 * **Language:** Java 21 (LTS)
-    * **Framework:** Spring Boot 3.5.4 / Spring Cloud 2025.0.0
-    * **Architecture:** Domain-Driven Design (DDD), CQRS (Command Query Responsibility Segregation), Microservices Architecture
-    * **Database:** MySQL 8+
-    * **Persistence & ORM:** Spring Data JPA / Hibernate
-    * **External Services:** Cloudinary API (image storage, optimization, and CDN delivery)    * **Message Broker:** RabbitMQ (AMQP Event-Driven integration)
-    * **Service Discovery:** Netflix Eureka Client
-    * **Security:** Spring Security with JWT (JSON Web Tokens) validation
-    * **API Documentation:** SpringDoc OpenAPI 3 / Swagger UI
-    * **Build Tool:** Maven 3.9+
-    * **Containerization:** Docker & Docker Compose
+* **Framework:** Spring Boot 3.5.4 / Spring Cloud 2025.0.0
+*  * **Architecture:** Domain-Driven Design (DDD), CQRS (Command Query Responsibility Segregation), Microservices Architecture
+*  * **Database:** MySQL 8+
+*  * **Persistence & ORM:** Spring Data JPA / Hibernate
+* **External Services:** Cloudinary API (image storage, optimization, and CDN delivery)    * **Message Broker:** RabbitMQ (AMQP Event-Driven integration)
+* **Service Discovery:** Netflix Eureka Client
+* **Security:** Spring Security with JWT (JSON Web Tokens) validation
+* **API Documentation:** SpringDoc OpenAPI 3 / Swagger UI
+* **Build Tool:** Maven 3.9+
+* **Containerization:** Docker & Docker Compose
       
 ## Prerequisites
 
