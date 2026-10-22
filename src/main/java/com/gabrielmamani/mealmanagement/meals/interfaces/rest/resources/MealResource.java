@@ -1,4 +1,6 @@
-package com.devscracks.mealmanagement.meals.interfaces.rest.resources;
+package com.gabrielmamani.mealmanagement.meals.interfaces.rest.resources;
+
+import java.util.List;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
@@ -6,6 +8,9 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Schema(name = "MealResponse", description = "Meal catalog entry, including nutritional information")
+/**
+ * Resource representation of a meal returned to API clients.
+ */
 public record MealResource(
 
         @Schema(description = "Meal identifier", example = "1")
@@ -42,11 +47,18 @@ public record MealResource(
         boolean available,
 
         @Schema(description = "Optional image URL", example = "https://cdn.mealflow.com/meals/grilled-chicken-bowl.jpg")
-        String imageUrl,
+        List<String> imageUrls,
 
-        @Schema(description = "Creation timestamp")
-        LocalDateTime createdAt,
+        @Schema(description = "Dietary conditions of the meal", example = "[\"VEGAN\", \"GLUTEN_FREE\"]")
+        java.util.List<String> dietaryConditions,
 
-        @Schema(description = "Last update timestamp")
-        LocalDateTime updatedAt) {
+        @Schema(description = "Product type", example = "Erizos")
+        String productType,
+
+        @Schema(description = "Country of origin", example = "Chile (X Región)")
+        String countryOfOrigin,
+
+        @Schema(description = "Packaging", example = "Estuche Bandeja")
+        String packaging
+        ) {
 }
