@@ -1,4 +1,4 @@
-package com.devscracks.mealmanagement.shared.application.result;
+package com.gabrielmamani.mealmanagement.shared.application.result;
 
 import org.jspecify.annotations.NullMarked;
 

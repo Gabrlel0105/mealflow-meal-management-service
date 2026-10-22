@@ -1,8 +1,8 @@
-package com.devscracks.mealmanagement.shared.interfaces.rest;
+package com.gabrielmamani.mealmanagement.shared.interfaces.rest;
 
 
-import com.devscracks.mealmanagement.shared.application.result.ApplicationError;
-import com.devscracks.mealmanagement.shared.interfaces.rest.transform.ErrorResponseAssembler;
+import com.gabrielmamani.mealmanagement.shared.application.result.ApplicationError;
+import com.gabrielmamani.mealmanagement.shared.interfaces.rest.transform.ErrorResponseAssembler;
 import org.jspecify.annotations.NullMarked;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.http.ResponseEntity;

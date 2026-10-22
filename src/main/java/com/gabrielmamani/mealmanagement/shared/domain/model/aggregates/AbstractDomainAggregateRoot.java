@@ -1,4 +1,4 @@
-package com.devscracks.mealmanagement.shared.domain.model.aggregates;
+package com.gabrielmamani.mealmanagement.shared.domain.model.aggregates;
 
 import org.jspecify.annotations.NullMarked;
 import org.springframework.data.domain.AbstractAggregateRoot;

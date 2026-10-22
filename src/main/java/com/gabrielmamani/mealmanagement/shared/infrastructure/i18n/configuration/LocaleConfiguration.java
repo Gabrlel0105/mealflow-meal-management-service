@@ -1,4 +1,4 @@
-package com.devscracks.mealmanagement.shared.infrastructure.i18n.configuration;
+package com.gabrielmamani.mealmanagement.shared.infrastructure.i18n.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

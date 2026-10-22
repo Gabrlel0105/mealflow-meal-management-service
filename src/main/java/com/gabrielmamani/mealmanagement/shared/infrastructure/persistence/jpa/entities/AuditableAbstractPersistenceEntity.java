@@ -1,4 +1,4 @@
-package com.devscracks.mealmanagement.shared.infrastructure.persistence.jpa.entities;
+package com.gabrielmamani.mealmanagement.shared.infrastructure.persistence.jpa.entities;
 
 import jakarta.persistence.*;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.devscracks.mealmanagement.shared.infrastructure.security.authorization;
+package com.gabrielmamani.mealmanagement.shared.infrastructure.security.authorization;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
