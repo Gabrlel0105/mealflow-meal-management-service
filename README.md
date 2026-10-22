@@ -22,7 +22,7 @@ separates bounded contexts and segregates data mutation (Commands) from data ret
     * **API Documentation:** SpringDoc OpenAPI 3 / Swagger UI
     * **Build Tool:** Maven 3.9+
     * **Containerization:** Docker & Docker Compose
-    * 
+      
 ## Prerequisites
 
 * Java 21 (LTS)
