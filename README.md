@@ -78,21 +78,21 @@ src/main/java/com/gabrielmamani/mealmanagement/
 
  ### Layer Responsibilities
 
-  • Domain Layer: Encapsulates the core business rules, domain entities, value objects, domain events, and repository contracts. It remains completely
+  * Domain Layer: Encapsulates the core business rules, domain entities, value objects, domain events, and repository contracts. It remains completely
   independent of frameworks, databases, and UI concerns.
-  • Application Layer: Orchestrates business use cases by coordinating domain aggregates and external services. Adheres strictly to CQRS by separating
+  * Application Layer: Orchestrates business use cases by coordinating domain aggregates and external services. Adheres strictly to CQRS by separating
   command handlers (mutations) from query handlers (read operations).
-  • Infrastructure Layer: Implements technical concerns such as database persistence via Spring Data JPA/Hibernate, message broker integration (RabbitMQ),
+  * Infrastructure Layer: Implements technical concerns such as database persistence via Spring Data JPA/Hibernate, message broker integration (RabbitMQ),
   and third-party cloud services (Cloudinary image storage).
-  • Interfaces Layer: Exposes the RESTful API endpoints, handles HTTP requests/responses, validates payloads, and transforms incoming DTOs into domain
+  * Interfaces Layer: Exposes the RESTful API endpoints, handles HTTP requests/responses, validates payloads, and transforms incoming DTOs into domain
   commands and outgoing entities into resource representations.
-  • Shared Kernel: Provides cross-cutting concerns used across the service, including security filters (JWT), global exception handling, auditing, Redis
+  * Shared Kernel: Provides cross-cutting concerns used across the service, including security filters (JWT), global exception handling, auditing, Redis
   caching, and OpenAPI documentation.
 
 ### Environment Variables
 
 | Variable | Description | Default (Dev) |
-    | :--- | :--- | :--- |
+| :--- | :--- | :--- |
 | `PORT` | Application HTTP server port | `8085` |
 | `DB_URL` | JDBC connection URL for MySQL database | `jdbc:mysql://localhost:3306/mealfd` |
 | `DB_USER` | MySQL database username | `root` |
